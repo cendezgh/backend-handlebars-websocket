@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "title": "iPhone 13",
+        "description": "Smartphone de Apple",
+        "price": 799,
+        "status": true,
+        "code": "IP13",
+        "stock": 100,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 2,
+        "title": "Samsung Galaxy S21",
+        "description": "Smartphone de Samsung",
+        "price": 699,
+        "status": true,
+        "code": "SGS21",
+        "stock": 80,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 3,
+        "title": "MacBook Pro",
+        "description": "Ordenador portátil de Apple",
+        "price": 1299,
+        "status": true,
+        "code": "MBP",
+        "stock": 70,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 4,
+        "title": "Dell XPS 13",
+        "description": "Ordenador portátil de Dell",
+        "price": 1099,
+        "status": true,
+        "code": "DX13",
+        "stock": 50,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 5,
+        "title": "AirPods Pro",
+        "description": "Auriculares inalámbricos de Apple",
+        "price": 199,
+        "status": true,
+        "code": "APP",
+        "stock": 200,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 6,
+        "title": "Apple Watch Series 7",
+        "description": "Reloj inteligente de Apple",
+        "price": 399,
+        "status": true,
+        "code": "AWS7",
+        "stock": 120,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 7,
+        "title": "iPad Pro",
+        "description": "Tableta de Apple",
+        "price": 799,
+        "status": true,
+        "code": "IPP",
+        "stock": 90,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 8,
+        "title": "Sony PlayStation 5",
+        "description": "Consola de videojuegos de Sony",
+        "price": 499,
+        "status": true,
+        "code": "SP5",
+        "stock": 30,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 9,
+        "title": "Nintendo Switch",
+        "description": "Consola de videojuegos de Nintendo",
+        "price": 299,
+        "status": true,
+        "code": "NSW",
+        "stock": 60,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 10,
+        "title": "Bose QuietComfort 35 II",
+        "description": "Auriculares con cancelación de ruido de Bose",
+        "price": 299,
+        "status": true,
+        "code": "BQC35II",
+        "stock": 150,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 11,
+        "title": "Canon EOS R6",
+        "description": "Cámara digital de Canon",
+        "price": 2499,
+        "status": true,
+        "code": "CER6",
+        "stock": 20,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 12,
+        "title": "Nikon D850",
+        "description": "Cámara digital de Nikon",
+        "price": 2796,
+        "status": true,
+        "code": "ND850",
+        "stock": 25,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 13,
+        "title": "Oculus Quest 2",
+        "description": "Gafas de realidad virtual de Oculus",
+        "price": 299,
+        "status": true,
+        "code": "OQ2",
+        "stock": 40,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 14,
+        "title": "GoPro HERO10 Black",
+        "description": "Cámara de acción de GoPro",
+        "price": 399,
+        "status": true,
+        "code": "GPH10B",
+        "stock": 80,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 15,
+        "title": "DJI Mavic Air 2",
+        "description": "Drone de DJI",
+        "price": 799,
+        "status": true,
+        "code": "DMA2",
+        "stock": 30,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 16,
+        "title": "Amazon Echo Dot (4th gen)",
+        "description": "Altavoz inteligente de Amazon",
+        "price": 49,
+        "status": true,
+        "code": "AED4",
+        "stock": 200,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 17,
+        "title": "Google Nest Hub Max",
+        "description": "Pantalla inteligente de Google",
+        "price": 229,
+        "status": true,
+        "code": "GNHM",
+        "stock": 100,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 18,
+        "title": "Microsoft Surface Pro 7",
+        "description": "Tableta de Microsoft",
+        "price": 749,
+        "status": true,
+        "code": "MSP7",
+        "stock": 60,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 19,
+        "title": "Lenovo ThinkPad X1 Carbon",
+        "description": "Ordenador portátil de Lenovo",
+        "price": 1145,
+        "status": true,
+        "code": "LTX1C",
+        "stock": 50,
+        "thumbnail": "https://picsum.photos/500/500"
+    },
+    {
+        "id": 20,
+        "title": "Razer Blade 15",
+        "description": "Ordenador portátil para juegos de Razer",
+        "price": 1699,
+        "status": true,
+        "code": "RB15",
+        "stock": 40,
+        "thumbnail": "https://picsum.photos/500/500"
+    }
+]
