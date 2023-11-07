@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Real Time Products</title>
-</head>
-<body>
-  <h1>List of Real Time Products</h1>
-  <ul id="productList">
-    {{#each products}}
-      <li>{{this.title}} - Price: {{this.price}}</li>
-    {{/each}}
-  </ul>
+<h2>Productos en Tiempo Real</h2>
+<form id="form" action="/api/products" method="POST">
+    <div>
+        <label>Nombre</label>
+        <input type="text" name="title" required>
+    </div>
+    <div>
+        <label>Precio</label>
+        <input type="number" name="price" required>
+    </div>
+    <div>
+        <label>Descripción</label>
+        <input type="text" name="description" required>
+    </div>
+    <div>
+        <label>Código</label>
+        <input type="text" name="code" required>
+    </div>
+    <div>
+        <label>Stock</label>
+        <input type="number" name="stock" required>
+    </div>
+    <div>
+        <label>Thumbnail</label>
+        <input type="text" name="thumbnail">
+    </div>
+    <input type="submit" value="Crear Producto">
+</form>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    const socket = io();
+<p id="products"></p>
 
-    socket.on('productCreated', (product) => {
-      const productItem = document.createElement('li');
-      productItem.textContent = `${product.title} - Price: ${product.price}`;
-      document.getElementById('productList').appendChild(productItem);
-    });
-
-    socket.on('productDeleted', (productId) => {
-      const productItem = document.getElementById(`product-${productId}`);
-      if (productItem) {
-        productItem.remove();
-      }
-    });
-  </script>
-</body>
-</html>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/index.js"></script>

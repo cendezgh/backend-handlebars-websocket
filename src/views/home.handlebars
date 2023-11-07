@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-</head>
-<body>
-  <h1>List of Products</h1>
-  <ul>
-    {{#each products}}
-      <li>{{this.title}} - Price: {{this.price}}</li>
-    {{/each}}
-  </ul>
-</body>
-</html>
+<h2>Listado de Productos - Handlebars</h2>
+{{#if products.length}}
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Precio</th>
+  </tr>
+  {{#each products}}
+    <tr>
+      <td>{{this.title}}</td>
+      <td>{{this.description}}</td>
+      <td>{{this.price}}</td>
+    </tr>
+  {{/each}}
+</table>
+{{else}}
+<p>No existen productos</p>
+{{/if}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/index.js"></script>

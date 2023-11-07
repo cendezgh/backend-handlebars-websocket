@@ -1,0 +1,13 @@
+<h2>Creación de Producto</h2>
+<form id="form" action="/api/products" method="POST">
+    <div><label>Nombre</label><input type="text" name="title" required></div>
+    <div><label>Descripción</label><input type="text" name="description" required></div>
+    <div><label>Precio</label><input type="number" name="price" required></div>
+    <div><label>Código</label><input type="text" name="code" required></div>
+    <div><label>Stock</label><input type="number" name="stock" required></div>
+    <div><label>Thumbnail</label><input type="text" name="thumbnail"></div>
+    <input type="submit" value="Crear Producto">
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/index.js"></script>
