@@ -8,13 +8,8 @@ router.get("/", async(req, res) => {
     const products = JSON.parse(productsData);
     res.render("home", { products })
 });
-
-router.get("/realTimeProducts", (req, res) => {
-    res.render("realTimeProducts");
-});
-
-router.get("/createProduct", (req, res) => {
-    res.render("createProduct");
+router.get("/realtimeproducts", (req, res) => {
+    res.render("realTimeProducts")
 });
 
 export default router;

@@ -39,22 +39,7 @@ const createProductRouter = (socketServer) => {
 
   router.post('/', async (req, res) => {
     try {
-      const { title, description, price, code, stock, thumbnail } = req.body;
-      
-      // Validar los campos requeridos
-      if (!title || !price || !code || !stock) {
-        return res.status(400).json({ message: 'Missing required fields' });
-      }
-
-      const product = {
-        title,
-        description,
-        price: Number(price),
-        code,
-        stock: Number(stock),
-        thumbnail
-      };
-
+      const product = req.body;
       const createdProduct = await productManager.createProduct(product);
       // Emitir evento 'productCreated'
       socketServer.emit('productCreated', createdProduct);

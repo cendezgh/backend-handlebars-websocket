@@ -26,7 +26,7 @@ app.set("views", __dirname + "/views");
 app.set('view engine', 'handlebars');
 
 app.get("/realTimeProducts", (req, res) => {
-  res.render("realTimeProducts");
+  res.render("realTimeProducts")
 });
 
 app.use('/api/products', productRouter(socketServer));
