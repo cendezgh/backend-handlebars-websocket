@@ -1,24 +1,39 @@
 const socketClient = io();
 
-const form = document.getElementById("form");
-const inputTitle = document.getElementById("title");
-const inputPrice = document.getElementById("price");
+const createForm = document.getElementById("createForm");
+const deleteForm = document.getElementById("deleteForm");
 const products = document.getElementById("products");
 
-form.onsubmit = (e) => {
+createForm.onsubmit = (e) => {
     e.preventDefault();
-    const title = inputTitle.value;
-    const price = inputPrice.value;
-    const product = {title , price};
+    const title = document.getElementById("createTitle").value;
+    const description = document.getElementById("createDescription").value;
+    const price = document.getElementById("createPrice").value;
+    const code = document.getElementById("createCode").value;
+    const stock = document.getElementById("createStock").value;
+
+    const product = { title, description, price, code, stock };
     socketClient.emit("newProduct", product);
-    inputTitle.value = "";
-    inputPrice.value = "";
+
+    document.getElementById("createTitle").value = "";
+    document.getElementById("createDescription").value = "";
+    document.getElementById("createPrice").value = "";
+    document.getElementById("createCode").value = "";
+    document.getElementById("createStock").value = "";
+};
+
+deleteForm.onsubmit = (e) => {
+    e.preventDefault();
+    const id = document.getElementById("deleteId").value;
+    socketClient.emit("deleteProduct", id);
+    
+    document.getElementById("deleteId").value = "";
 };
 
 socketClient.on("arrayProducts", (productsArray) => {
     let infoProducts = "";
     productsArray.forEach(p => {
-        infoProducts += `${p.title} - $${p.price} </br>`;
+        infoProducts += `${p.id} - ${p.title} - ${p.description} - ${p.price} - ${p.code} - ${p.stock}</br>`;
     });
-    products.innerHTML = infoProducts
-})
+    products.innerHTML = infoProducts;
+});

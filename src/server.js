@@ -1,12 +1,10 @@
 import express from 'express';
 import morgan from 'morgan';
-import productRouter from './routes/product.router.js';
-import cartRouter from './routes/cart.router.js';
 import { Server } from 'socket.io';
 import handlebars from 'express-handlebars';
 import { __dirname } from './utils.js';
 import viewRouter from "./routes/views.router.js";
-import fs from 'fs';
+import { ProductManager } from './managers/product.manager.js';
 
 const app = express();
 const PORT = 8080;
@@ -29,26 +27,36 @@ app.get("/realTimeProducts", (req, res) => {
   res.render("realTimeProducts")
 });
 
-app.use('/api/products', productRouter(socketServer));
-app.use('/api/carts', cartRouter);
-
 app.use("/", viewRouter);
-
-socketServer.on('connection', (socket) => {
-  console.log('New client connected');
-  socket.on('disconnect', () => {
-    console.log('Client disconnected');
-  });
-});
 
 socketServer.on('connection', async(socket) => {
   const productsFilePath = './src/data/products.json';
-  const productsData = await fs.readFileSync(productsFilePath, 'utf-8');
-  const products = JSON.parse(productsData);
+  const productManager = new ProductManager(productsFilePath);
+  const productsData = await productManager.getProducts();
+
+  socket.emit('arrayProducts', productsData);
   console.log(`New client connected ${socket.id}`);
+
   socket.on('disconnect', () => console.log('Client disconnected'));
-  socket.on("newProduct", (product)=>{
-    products.push(product);
-    socketServer.emit("arrayProducts", products);
-  })
+
+  socket.on("newProduct", async (product) => {
+    const newProduct = await productManager.createProduct(product);
+
+    if (newProduct) {
+      const updatedProducts = await productManager.getProducts();
+      socketServer.emit("arrayProducts", updatedProducts);
+    }
+  });
+
+  socket.on("deleteProduct", async (productId) => {
+    let idToDelete = Number(productId);
+    const deleted = await productManager.deleteProduct(idToDelete);
+
+    if (deleted) {
+      const updatedProducts = await productManager.getProducts();
+      socketServer.emit("arrayProducts", updatedProducts);
+    }
+  });
 });
+
+export default app;
